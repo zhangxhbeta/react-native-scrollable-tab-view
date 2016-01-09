@@ -33,7 +33,7 @@ var App = React.createClass({
       </ScrollableTabView>
     );
   }
-}
+});
 ```
 
 ## Injecting a custom tab bar
@@ -55,7 +55,7 @@ var App = React.createClass({
       </ScrollableTabView>
     );
   }
-}
+});
 ```
 
 ## Example
@@ -78,6 +78,7 @@ See
 - **`tabBarBackgroundColor`** _(String)_ - color of the default tab bar's background, defaults to `white`
 - **`tabBarActiveTextColor`** _(String)_ - color of the default tab bar's text when active, defaults to `navy`
 - **`tabBarInactiveTextColor`** _(String)_ - color of the default tab bar's text when inactive, defaults to `black`
+- **`style`** _([View.propTypes.style](https://facebook.github.io/react-native/docs/view.html#style))_
 
 ---
 

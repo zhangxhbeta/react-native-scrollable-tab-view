@@ -6,18 +6,16 @@ var {
   Text,
   View,
   ScrollView,
-  Dimensions,
 } = React;
 
 var ScrollableTabView = require('react-native-scrollable-tab-view');
 var FacebookTabBar = require('./FacebookTabBar');
-var deviceWidth = Dimensions.get('window').width;
 
 var FacebookTabsExample = React.createClass({
   render() {
     return (
       <View style={styles.container}>
-        <ScrollableTabView renderTabBar={() => <FacebookTabBar />}>
+        <ScrollableTabView initialPage={1} renderTabBar={() => <FacebookTabBar />}>
           <ScrollView tabLabel="ion|ios-paper" style={styles.tabView}>
             <View style={styles.card}>
               <Text>News</Text>
@@ -49,6 +47,19 @@ var FacebookTabsExample = React.createClass({
   }
 });
 
+var SimpleExample = React.createClass({
+  render() {
+    return (
+      <ScrollableTabView style={{marginTop: 20}}>
+        <Text tabLabel='Tab #1'>My</Text>
+        <Text tabLabel='Tab #2'>favorite</Text>
+        <Text tabLabel='Tab #3'>project</Text>
+      </ScrollableTabView>
+    )
+  }
+});
+
+//module.exports = SimpleExample;
 module.exports = FacebookTabsExample;
 
 var styles = StyleSheet.create({
@@ -57,7 +68,7 @@ var styles = StyleSheet.create({
     marginTop: 30,
   },
   tabView: {
-    width: deviceWidth,
+    flex: 1,
     padding: 10,
     backgroundColor: 'rgba(0,0,0,0.01)',
   },
